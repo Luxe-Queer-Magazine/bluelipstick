@@ -239,6 +239,23 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
+        .footer-link {
+            color: var(--lavender);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover, .footer-link:focus {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        nav[aria-label="Footer Navigation"] {
+            margin-bottom: 15px;
+        }
+
         @media (max-width: 768px) {
             .manifesto-title {
                 font-size: 2.5rem;
@@ -264,7 +281,7 @@
 
     <div class="manifesto-container">
         <div class="container">
-            <img src="/public/blue-lips.jpg" alt="Blue Lips" class="blue-lips">
+            <img src="/public/bluelipstickmanifesto.jpg" alt="Blue Lipstick Manifesto" class="blue-lips">
 
             <h1 class="manifesto-title">THE BLUE LIPSTICK MANIFESTO</h1>
 
@@ -320,14 +337,18 @@
                     <span class="gold-text">LUXE</span><span class="highlight">QUEER</span> Magazine
                 </div>
 
-                <a href="luxe-queer-prelaunch.html" class="cta-button">Return to Main Page</a>
+                <a href="luxe-queer-prelaunch.html" class="cta-button" role="button">Return to Main Page</a>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <p class="copyright">&copy; 2024 Luxe Queer Magazine. All rights reserved.</p>
+            <nav aria-label="Footer Navigation">
+                <a href="luxe-queer-prelaunch.html" class="footer-link">Pre-Launch</a>
+                <a href="index.html" class="footer-link">Home</a>
+            </nav>
+            <p class="copyright">&copy; 2025 Luxe Queer Magazine. All rights reserved.</p>
         </div>
     </footer>
 </body>

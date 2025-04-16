@@ -207,12 +207,15 @@
         }
 
         .lipstick-icon {
-            font-size: 3rem; /* Placeholder for icon */
-            color: var(--color-lipstick-blue);
+            width: 100px;
+            height: auto;
             margin-bottom: 20px;
-            /* Replace with actual SVG or FontAwesome icon later */
-            display: inline-block; /* Example styling */
-            width: 50px; height: 50px; background: var(--color-lipstick-blue); border-radius: 5px;
+            filter: drop-shadow(0 0 10px rgba(26, 58, 143, 0.7));
+            transition: transform 0.3s ease;
+        }
+
+        .lipstick-icon:hover {
+            transform: scale(1.05);
         }
 
         .lipstick-title {
@@ -316,6 +319,19 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
         /* Fade in animation for main content */
         @keyframes fadeInContent {
             from { opacity: 0; transform: translateY(30px); }
@@ -373,7 +389,7 @@
 </head>
 <body>
     <!-- Lava Lamp Effect -->
-    <div class="lava-lamp">
+    <div class="lava-lamp" aria-hidden="true">
         <div></div>
         <div></div>
         <div></div>
@@ -381,14 +397,14 @@
 
     <!-- Splash Screen -->
     <div id="splash-screen">
-        <img src="public/blue-lips.jpg" alt="Luxe Queer Logo" class="splash-logo">
-        <button id="enter-button" class="splash-enter-button">Enter the World of Luxe Queer</button>
+        <img src="public/lips1.jpg" alt="Luxe Queer Logo" class="splash-logo">
+        <button id="enter-button" class="splash-enter-button" type="button">Enter the World of Luxe Queer</button>
     </div>
 
     <!-- Main Content (Initially Hidden) -->
     <div class="main-content">
         <section class="hero">
-             <img src="public/blue-lips.jpg" alt="Luxe Queer Logo" class="hero-logo">
+             <img src="public/lips1.jpg" alt="Luxe Queer Logo" class="hero-logo">
             <h1>Luxury is About to Be Redefined.</h1>
             <p class="subtitle">Prepare for an unapologetic exploration of fashion, art, culture, and opulence—through a gloriously queer lens.</p>
             <p class="coming-soon">The Standard is Changing. Soon.</p>
@@ -405,8 +421,8 @@
 
         <section class="section lipstick-section">
             <div class="container">
-                <!-- Replace div with actual icon -->
-                <div class="lipstick-icon" aria-hidden="true"></div>
+                <!-- Blue Lipstick Edit Image -->
+                <img src="public/edit.jpg" alt="Blue Lipstick Edit" class="lipstick-icon">
                  <h2 class="lipstick-title">Introducing: The <span>Blue Lipstick</span> Edit</h2>
                  <p class="lipstick-text">
                      Every revolution needs its signature. Ours is sharp, witty, and unapologetically bold. The Blue Lipstick Edit delivers potent takes on culture, style, and the state of luxury—served with the authority and flair only Luxe Queer can provide. Prepare for commentary that doesn't just observe, it commands.
@@ -419,19 +435,22 @@
                 <h2 class="section-title gold">Join the Vanguard</h2>
                 <p class="waitlist-text">Be among the first to experience Luxe Queer. Sign up for exclusive updates and early access.</p>
                 <form class="waitlist-form">
-                    <input type="email" placeholder="Enter your email" required>
+                    <label for="email" class="sr-only">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email address for waitlist">
                     <button type="submit">Claim Your Invitation</button>
                 </form>
             </div>
         </section>
 
         <footer>
-            <img src="public/blue-lips.jpg" alt="Luxe Queer Logo" class="footer-logo">
-            <div class="footer-links">
-                <a href="luxe-queer-prelaunch.html">Pre-Launch</a>
-                <a href="blue-lipstick-manifesto.html">Blue Lipstick Manifesto</a>
-                <a href="main.html">Main</a>
-            </div>
+            <img src="public/lips1.jpg" alt="Luxe Queer Logo" class="footer-logo">
+            <nav aria-label="Footer Navigation">
+                <div class="footer-links">
+                    <a href="luxe-queer-prelaunch.html">Pre-Launch</a>
+                    <a href="blue-lipstick-manifesto.html">Blue Lipstick Manifesto</a>
+                    <a href="main.html">Main</a>
+                </div>
+            </nav>
             <p class="copyright">&copy; 2025 Luxe Queer Magazine. All rights reserved.</p>
         </footer>
     </div>
